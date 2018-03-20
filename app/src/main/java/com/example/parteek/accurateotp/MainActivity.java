@@ -48,7 +48,10 @@ public class MainActivity extends AppCompatActivity {
     String LMG="",MG="",RMG="";
     String PLMG="",PMG="",PRMG="";
     int c=0;
+    String name="";
+    String version="";
     int printCount=0;
+    TextView textViewName,textViewVersion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,18 +82,17 @@ public class MainActivity extends AppCompatActivity {
 //            txtresult.setText(result.rawValue);
             String serviceOTP=scanTxt(result.rawValue);
             if (serviceOTP.contains("#") ||serviceOTP.contains("@") || serviceOTP.contains("%") || serviceOTP.contains("&")) {
-                showDialouge(serviceOTP);
+                String[] otp=serviceOTP.split(";");
+                name=otp[1];
+                version=otp[2];
+                showDialouge(otp[0]);
             }else {
                 shareWhatsapp(serviceOTP);
             }
         }else {
             Toast.makeText(this, "Select a QR code Or QR Code is Not Clear", Toast.LENGTH_SHORT).show();
         }
-
-
-
     }
-
 
     public void SelectImg(View view) {
 
@@ -116,9 +118,6 @@ public class MainActivity extends AppCompatActivity {
             {
 
             }
-
-
-
         }
 
     }
@@ -197,6 +196,10 @@ public class MainActivity extends AppCompatActivity {
         cardViewButton=(CardView) dialog.findViewById(R.id.generate);
         cardViewButton1=(CardView) dialog.findViewById(R.id.cancel);
         editText=(EditText) dialog.findViewById(R.id.editText3);
+        textViewName=dialog.findViewById(R.id.textName);
+        textViewVersion=dialog.findViewById(R.id.textVersion);
+        textViewName.setText(name);
+        textViewVersion.setText(version);
         cardViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
