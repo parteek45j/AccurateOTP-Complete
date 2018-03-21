@@ -24,7 +24,7 @@ public class Splash extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             if (msg.what==102){
-                startActivity(new Intent(Splash.this,login.class));
+                startActivity(new Intent(Splash.this,MainActivity.class));
                 finish();
             }
         }

@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
     String name="";
     String version="";
     int printCount=0;
-    TextView textViewName,textViewVersion;
+    TextView textViewVersion;
+    EditText textViewName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -239,10 +240,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String compileOTP(String raw){
-        String[] raw1=raw.split(";");
-        String name=raw1[1];
-        String version=raw1[2];
-        raw=raw1[0]+" ";
+        raw=raw+" ";
         String [] val=new String[raw.length()];
         for (int i=0;i<=raw.length()-1;i++) {
             if(i%4==0) {

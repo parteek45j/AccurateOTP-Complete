@@ -25,14 +25,17 @@
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:layout_height="wrap_content">
-    <TextView
-        android:textColor="@color/colorAccent"
+    <EditText
         android:id="@+id/textName"
-        android:textSize="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Person"
+        android:layout_marginRight="30dp"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="#11000000"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="20dp"
         />
         <TextView
             android:textColor="@color/colorAccent"
